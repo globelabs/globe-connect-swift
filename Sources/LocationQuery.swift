@@ -3,14 +3,14 @@ import Foundation
 public struct LocationQuery {
     let accessToken: String
 
-    typealias SuccessHandler = (JSON) -> Void
-    typealias ErrorHandler = (_ error: Error) -> Void
+    public typealias SuccessHandler = (JSON) -> Void
+    public typealias ErrorHandler = (_ error: Error) -> Void
 
-    init(accessToken: String) {
+    public init(accessToken: String) {
         self.accessToken = accessToken
     }
 
-    func getLocation(
+    public func getLocation(
         address: String,
         accuracy: Int = 10,
         success: SuccessHandler? = nil,

@@ -5,10 +5,10 @@ public struct Payment {
     let appId: String
     let appSecret: String
 
-    typealias SuccessHandler = (JSON) -> Void
-    typealias ErrorHandler = (_ error: Error) -> Void
+    public typealias SuccessHandler = (JSON) -> Void
+    public typealias ErrorHandler = (_ error: Error) -> Void
 
-    init(
+    public init(
         appId: String,
         appSecret: String,
         accessToken: String? = nil
@@ -18,7 +18,7 @@ public struct Payment {
         self.accessToken    = accessToken!
     }
 
-    func sendPaymentRequest(
+    public func sendPaymentRequest(
         amount: Float,
         description: String,
         endUserId: String,
@@ -81,7 +81,7 @@ public struct Payment {
         }
     }
 
-    func getLastReferenceCode(
+    public func getLastReferenceCode(
         success: SuccessHandler? = nil,
         failure: ErrorHandler? = nil
     ) -> Void {

@@ -4,15 +4,15 @@ public struct Ussd {
     let accessToken: String
     let shortCode: String
 
-    typealias SuccessHandler = (JSON) -> Void
-    typealias ErrorHandler = (_ error: Error) -> Void
+    public typealias SuccessHandler = (JSON) -> Void
+    public typealias ErrorHandler = (_ error: Error) -> Void
 
-    init(accessToken: String, shortCode: String) {
+    public init(accessToken: String, shortCode: String) {
         self.accessToken = accessToken
         self.shortCode = shortCode
     }
 
-    func sendUssdRequest(
+    public func sendUssdRequest(
         address: String,
         message: String,
         flash: Bool,
@@ -75,7 +75,7 @@ public struct Ussd {
         }
     }
 
-    func replyUssdRequest(
+    public func replyUssdRequest(
         address: String,
         message: String,
         sessionId: String,

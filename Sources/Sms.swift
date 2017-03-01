@@ -4,15 +4,15 @@ public struct Sms {
     let accessToken: String
     let shortCode: String
 
-    typealias SuccessHandler = (JSON) -> Void
-    typealias ErrorHandler = (_ error: Error) -> Void
+    public typealias SuccessHandler = (JSON) -> Void
+    public typealias ErrorHandler = (_ error: Error) -> Void
 
-    init(accessToken: String, shortCode: String) {
+    public init(accessToken: String, shortCode: String) {
         self.accessToken = accessToken
         self.shortCode = shortCode
     }
 
-    func sendBinaryMessage(
+    public func sendBinaryMessage(
         address: String,
         message: String,
         header: String,
@@ -78,7 +78,7 @@ public struct Sms {
         }
     }
 
-    func sendMessage(
+    public func sendMessage(
         address: String,
         message: String,
         clientCorrelator: String? = nil,

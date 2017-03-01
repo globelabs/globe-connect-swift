@@ -4,15 +4,15 @@ public struct Amax {
     let appId: String
     let appSecret: String
 
-    typealias SuccessHandler = (JSON) -> Void
-    typealias ErrorHandler = (_ error: Error) -> Void
+    public typealias SuccessHandler = (JSON) -> Void
+    public typealias ErrorHandler = (_ error: Error) -> Void
 
-    init(appId: String, appSecret: String) {
+    public init(appId: String, appSecret: String) {
         self.appId      = appId;
         self.appSecret  = appSecret
     }
 
-    func sendRewardRequest(
+    public func sendRewardRequest(
         address: String,
         promo: String,
         rewardsToken: String,

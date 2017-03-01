@@ -3,14 +3,14 @@ import Foundation
 public struct Subscriber {
     let accessToken: String
 
-    typealias SuccessHandler = (JSON) -> Void
-    typealias ErrorHandler = (_ error: Error) -> Void
+    public typealias SuccessHandler = (JSON) -> Void
+    public typealias ErrorHandler = (_ error: Error) -> Void
 
-    init(accessToken: String) {
+    public init(accessToken: String) {
         self.accessToken = accessToken
     }
 
-    func getSubscriberBalance(
+    public func getSubscriberBalance(
         address: String,
         success: SuccessHandler? = nil,
         failure: ErrorHandler? = nil
@@ -44,7 +44,7 @@ public struct Subscriber {
         )
     }
 
-    func getSubscriberReloadAmount(
+    public func getSubscriberReloadAmount(
         address: String,
         success: SuccessHandler? = nil,
         failure: ErrorHandler? = nil
