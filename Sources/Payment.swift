@@ -1,12 +1,12 @@
 import Foundation
 
-struct Payment {
+public struct Payment {
     let accessToken: String
     let appId: String
     let appSecret: String
 
-    typealias SuccessHandler = (JSON) -> Void
-    typealias ErrorHandler = (_ error: Error) -> Void
+    public typealias SuccessHandler = (JSON) -> Void
+    public typealias ErrorHandler = (_ error: Error) -> Void
 
     public init(
         appId: String,

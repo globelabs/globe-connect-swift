@@ -1,8 +1,10 @@
 import Foundation
 
-struct Authentication {
-    typealias SuccessHandler = (JSON) -> Void
-    typealias ErrorHandler = (_ error: Error) -> Void
+public struct Authentication {
+    public typealias SuccessHandler = (JSON) -> Void
+    public typealias ErrorHandler = (_ error: Error) -> Void
+
+    public init() {}
 
     public func getAccessToken(
         appId: String,

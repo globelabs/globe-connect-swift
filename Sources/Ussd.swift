@@ -1,11 +1,11 @@
 import Foundation
 
-struct Ussd {
+public struct Ussd {
     let accessToken: String
     let shortCode: String
 
-    typealias SuccessHandler = (JSON) -> Void
-    typealias ErrorHandler = (_ error: Error) -> Void
+    public typealias SuccessHandler = (JSON) -> Void
+    public typealias ErrorHandler = (_ error: Error) -> Void
 
     public init(accessToken: String, shortCode: String) {
         self.accessToken = accessToken

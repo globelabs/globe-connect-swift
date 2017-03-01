@@ -1,11 +1,11 @@
 import Foundation
 
-struct Amax {
+public struct Amax {
     let appId: String
     let appSecret: String
 
-    typealias SuccessHandler = (JSON) -> Void
-    typealias ErrorHandler = (_ error: Error) -> Void
+    public typealias SuccessHandler = (JSON) -> Void
+    public typealias ErrorHandler = (_ error: Error) -> Void
 
     public init(appId: String, appSecret: String) {
         self.appId      = appId;
