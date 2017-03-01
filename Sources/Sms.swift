@@ -1,18 +1,18 @@
 import Foundation
 
-struct Sms {
+public struct Sms {
     let accessToken: String
     let shortCode: String
 
     typealias SuccessHandler = (JSON) -> Void
     typealias ErrorHandler = (_ error: Error) -> Void
 
-    public init(accessToken: String, shortCode: String) {
+    init(accessToken: String, shortCode: String) {
         self.accessToken = accessToken
         self.shortCode = shortCode
     }
 
-    public func sendBinaryMessage(
+    func sendBinaryMessage(
         address: String,
         message: String,
         header: String,
@@ -78,7 +78,7 @@ struct Sms {
         }
     }
 
-    public func sendMessage(
+    func sendMessage(
         address: String,
         message: String,
         clientCorrelator: String? = nil,

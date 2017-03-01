@@ -1,18 +1,18 @@
 import Foundation
 
-struct Ussd {
+public struct Ussd {
     let accessToken: String
     let shortCode: String
 
     typealias SuccessHandler = (JSON) -> Void
     typealias ErrorHandler = (_ error: Error) -> Void
 
-    public init(accessToken: String, shortCode: String) {
+    init(accessToken: String, shortCode: String) {
         self.accessToken = accessToken
         self.shortCode = shortCode
     }
 
-    public func sendUssdRequest(
+    func sendUssdRequest(
         address: String,
         message: String,
         flash: Bool,
@@ -75,7 +75,7 @@ struct Ussd {
         }
     }
 
-    public func replyUssdRequest(
+    func replyUssdRequest(
         address: String,
         message: String,
         sessionId: String,

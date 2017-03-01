@@ -1,10 +1,10 @@
 import Foundation
 
-struct Authentication {
+public struct Authentication {
     typealias SuccessHandler = (JSON) -> Void
     typealias ErrorHandler = (_ error: Error) -> Void
 
-    public func getAccessToken(
+    func getAccessToken(
         appId: String,
         appSecret: String,
         code: String,
@@ -56,7 +56,7 @@ struct Authentication {
         )
     }
 
-    public func getDialogUrl(appId: String) -> String {
+    func getDialogUrl(appId: String) -> String {
         let redirectUrl: String = "https://developer.globelabs.com.ph/dialog/oauth?app_id=\(appId)"
 
         return redirectUrl

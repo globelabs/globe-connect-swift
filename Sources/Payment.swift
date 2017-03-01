@@ -1,6 +1,6 @@
 import Foundation
 
-struct Payment {
+public struct Payment {
     let accessToken: String
     let appId: String
     let appSecret: String
@@ -8,7 +8,7 @@ struct Payment {
     typealias SuccessHandler = (JSON) -> Void
     typealias ErrorHandler = (_ error: Error) -> Void
 
-    public init(
+    init(
         appId: String,
         appSecret: String,
         accessToken: String? = nil
@@ -18,7 +18,7 @@ struct Payment {
         self.accessToken    = accessToken!
     }
 
-    public func sendPaymentRequest(
+    func sendPaymentRequest(
         amount: Float,
         description: String,
         endUserId: String,
@@ -81,7 +81,7 @@ struct Payment {
         }
     }
 
-    public func getLastReferenceCode(
+    func getLastReferenceCode(
         success: SuccessHandler? = nil,
         failure: ErrorHandler? = nil
     ) -> Void {

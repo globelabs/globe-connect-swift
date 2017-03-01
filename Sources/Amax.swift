@@ -1,18 +1,18 @@
 import Foundation
 
-struct Amax {
+public struct Amax {
     let appId: String
     let appSecret: String
 
     typealias SuccessHandler = (JSON) -> Void
     typealias ErrorHandler = (_ error: Error) -> Void
 
-    public init(appId: String, appSecret: String) {
+    init(appId: String, appSecret: String) {
         self.appId      = appId;
         self.appSecret  = appSecret
     }
 
-    public func sendRewardRequest(
+    func sendRewardRequest(
         address: String,
         promo: String,
         rewardsToken: String,

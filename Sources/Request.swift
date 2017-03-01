@@ -1,6 +1,6 @@
 import Foundation
 
-struct Request {
+public struct Request {
     typealias RequestCallback = ((Data?, Any?, Any?) -> ())
 
     func get(
