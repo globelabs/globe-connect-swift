@@ -17,7 +17,7 @@ If you haven't signed up yet, please follow the instructions found in [Getting S
 #### Sample Code
 
 ```
-import GlobeConnect
+import GlobeConnectSwift
 
 Authentication().getAccessToken(
     appId: "[app_id]",
@@ -58,22 +58,22 @@ Send an SMS message to one or more mobile terminals:
 ##### Sample Code
 
 ```
-import GlobeConnect
+import GlobeConnectSwift
 
 let sms = Sms(
     accessToken: "[access_token]",
     shortCode: "[short_code]"
 )
 
-sms.sendBinaryMessage(
+sms.sendMessage(
     address: "[subscriber_number]",
     message: "[message]",
-    header: "[data_header]",
     success: { json in
         dump(json)
+        expectation.fulfill()
     },
     failure: { error in
-        print(error)
+        expectation.fulfill()
     })
 ```
 
@@ -108,22 +108,22 @@ Send binary data through SMS:
 ##### Sample Code
 
 ```
-import GlobeConnect
+import GlobeConnectSwift
 
 let sms = Sms(
     accessToken: "[access_token]",
     shortCode: "[short_code]"
 )
 
-sms.sendMessage(
+sms.sendBinaryMessage(
     address: "[subscriber_number]",
     message: "[message]",
+    header: "[data_header]",
     success: { json in
         dump(json)
-        expectation.fulfill()
     },
     failure: { error in
-        expectation.fulfill()
+        print(error)
     })
 ```
 
@@ -165,7 +165,7 @@ The following example shows how to send a USSD request.
 ##### Sample Code
 
 ```
-import GlobeConnect
+import GlobeConnectSwift
 
 let ussd = Ussd(
     accessToken: "[access_token]",
@@ -214,7 +214,7 @@ The following example shows how to send a USSD reply.
 ##### Sample Code
 
 ```
-import GlobeConnect
+import GlobeConnectSwift
 
 let ussd = Ussd(
     accessToken: "[access_token]",
@@ -271,7 +271,7 @@ The following example shows how you can request for a payment from a customer.
 ##### Sample Code
 
 ```
-import GlobeConnect
+import GlobeConnectSwift
 
 let payment = Payment(
     appId: "[app_id]",
@@ -324,7 +324,7 @@ The following example shows how you can get the last reference of payment.
 ##### Sample Code
 
 ```
-import GlobeConnect
+import GlobeConnectSwift
 
 let payment = Payment(
     appId: "[app_id]",
@@ -360,7 +360,7 @@ Amax is an automated promo builder you can use with your app to award customers 
 #### Sample Code
 
 ```
-import GlobeConnect
+import GlobeConnectSwift
 
 let amax = Amax(
     appId: "[app_id]",
@@ -401,7 +401,7 @@ To determine a general area (lat,lng) of your customers you can utilize this fea
 #### Sample Code
 
 ```
-import GlobeConnect
+import GlobeConnectSwift
 
 let locationQuery = LocationQuery(accessToken: "[access_token]")
 
@@ -449,7 +449,7 @@ The following example shows how you can get the subscriber balance.
 ##### Sample Code
 
 ```
-import GlobeConnect
+import GlobeConnectSwift
 
 let subscriber = Subscriber(accessToken: "[access_token]")
 
@@ -487,7 +487,7 @@ The following example shows how you can get the subscriber reload amount.
 ##### Sample Code
 
 ```
-import GlobeConnect
+import GlobeConnectSwift
 
 let subscriber = Subscriber(accessToken: "[access_token]")
 
