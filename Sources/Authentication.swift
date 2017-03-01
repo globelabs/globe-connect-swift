@@ -58,7 +58,7 @@ public struct Authentication {
         )
     }
 
-    func getDialogUrl(appId: String) -> String {
+    public func getDialogUrl(appId: String) -> String {
         let redirectUrl: String = "https://developer.globelabs.com.ph/dialog/oauth?app_id=\(appId)"
 
         return redirectUrl
